@@ -28,7 +28,11 @@ import 'package:gradproject/Features/login/presentation/view_model/cubit/login_c
 import 'package:gradproject/Features/register/presentation/view_model/cubit/register_cubit.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-void main() {
+late SharedPreferences prefs;
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  prefs = await SharedPreferences.getInstance();
   runApp(const GradProject());
 }
 

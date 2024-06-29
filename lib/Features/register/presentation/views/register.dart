@@ -6,6 +6,7 @@ import 'package:gradproject/Features/register/presentation/view_model/cubit/regi
 import 'package:gradproject/core/utls/widget/sign_button.dart';
 import 'package:gradproject/core/utls/widget/sign_logo.dart';
 import 'package:gradproject/core/utls/widget/text_body.dart';
+import 'package:gradproject/main.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -55,7 +56,7 @@ class _RegisterState extends State<Register> {
             btnOkColor: Colors.green,
           ).show();
 
-          SharedPreferences prefs = await SharedPreferences.getInstance();
+          // SharedPreferences prefs = await SharedPreferences.getInstance();
           prefs.setBool('isLoggedIn', true);
         } else if (state is RegisterFailure) {
           setState(() {

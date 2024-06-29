@@ -5,6 +5,7 @@ import 'package:gradproject/Features/details/presentation/views/widgets/custom_g
 import 'package:gradproject/Features/home/presentation/views/widgets/app_bar_view.dart';
 import 'package:gradproject/Features/search_services/presentation/views/search_service.dart';
 import 'package:gradproject/core/utls/widget/custom_text_feild.dart';
+import 'package:gradproject/main.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class DetailsBody extends StatefulWidget {
@@ -33,7 +34,7 @@ class _DetailsBodyState extends State<DetailsBody> {
   Future<void> _fetchDetails(int id) async {
   
   
-    SharedPreferences prefs = await SharedPreferences.getInstance();
+    // SharedPreferences prefs = await SharedPreferences.getInstance();
     String? token = prefs.getString('token');
 
     if (token == null) {

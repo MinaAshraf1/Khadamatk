@@ -8,6 +8,7 @@ import 'package:gradproject/Features/login/presentation/view_model/cubit/login_c
 import 'package:gradproject/core/utls/widget/sign_button.dart';
 import 'package:gradproject/core/utls/widget/sign_logo.dart';
 import 'package:gradproject/core/utls/widget/text_body.dart';
+import 'package:gradproject/main.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:awesome_dialog/awesome_dialog.dart';
@@ -43,7 +44,7 @@ class _LoginState extends State<Login> {
           if (token != null) {
             BlocProvider.of<UserCubit>(context).user(token: token);
 
-            SharedPreferences prefs = await SharedPreferences.getInstance();
+            // SharedPreferences prefs = await SharedPreferences.getInstance();
             await prefs.setString('token', token);
 
             AwesomeDialog(
@@ -56,7 +57,7 @@ class _LoginState extends State<Login> {
             ).show();
 
             Future.delayed(const Duration(seconds: 1), () {
-              Navigator.of(context).pushReplacementNamed(MainPage.homePageId);
+              Navigator.of(context).pushReplacementNamed(MainPage.homePageId,);
             });
             await prefs.setBool('isLoggedIn', true);
           }

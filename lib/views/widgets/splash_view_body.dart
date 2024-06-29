@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gradproject/Features/home/presentation/views/main_page.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:gradproject/main.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({Key? key}) : super(key: key);
@@ -37,10 +37,9 @@ class _SplashViewBodyState extends State<SplashViewBody>
 
     // Delay and navigate to the next page
     Future.delayed(const Duration(seconds: 4), () async {
-      SharedPreferences prefs = await SharedPreferences.getInstance();
+      // SharedPreferences prefs = await SharedPreferences.getInstance();
       bool isLoggedIn = prefs.getBool('isLoggedIn') ?? false;
-      Navigator.of(context)
-        .pushReplacementNamed(isLoggedIn ? MainPage.homePageId : 'login');
+      Navigator.pushReplacementNamed(context, isLoggedIn ? MainPage.homePageId : 'login',);
     });
   }
 

@@ -25,7 +25,6 @@ class LoginRepoImpl implements LoginRepo {
         return Left(ServerFailure(response.data['message'] ?? 'Unknown error'));
       }
     } catch (e) {
-      print("youssef");
       if (e is DioException) {
         return Left(ServerFailure.fromDioError(e));
       }

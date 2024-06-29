@@ -10,6 +10,7 @@ import 'package:gradproject/Features/login/presentation/view_model/cubit/login_c
 import 'package:gradproject/Features/login/presentation/views/login.dart';
 import 'package:gradproject/core/errors/failure.dart';
 import 'package:gradproject/core/utls/widget/custom_text_feild.dart';
+import 'package:gradproject/main.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class MainPageBody extends StatefulWidget {
@@ -33,7 +34,7 @@ class _MainPageBodyState extends State<MainPageBody> {
   }
 
   Future<void> _loadUserData() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
+    // SharedPreferences prefs = await SharedPreferences.getInstance();
     String? token = prefs.getString('token');
     if (token != null) {
       BlocProvider.of<UserCubit>(context).user(token: token);
