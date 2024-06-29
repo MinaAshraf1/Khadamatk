@@ -39,7 +39,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
     Future.delayed(const Duration(seconds: 4), () async {
       // SharedPreferences prefs = await SharedPreferences.getInstance();
       bool isLoggedIn = prefs.getBool('isLoggedIn') ?? false;
-      Navigator.pushReplacementNamed(context, isLoggedIn ? MainPage.homePageId : 'login',);
+      Navigator.pushReplacementNamed(context, isLoggedIn ? MainPage.homePageId : 'homeViewBody',);
     });
   }
 

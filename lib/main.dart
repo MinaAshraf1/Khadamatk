@@ -11,6 +11,7 @@ import 'package:gradproject/Features/home/data/repo/user_repo_impl.dart';
 import 'package:gradproject/Features/home/presentation/view_model/cubit/user_cubit.dart';
 import 'package:gradproject/Features/register/presentation/views/register.dart';
 import 'package:gradproject/views/home_view.dart';
+import 'package:gradproject/views/widgets/home_view_body.dart';
 import 'package:gradproject/views/widgets/sign.dart';
 
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -73,7 +74,8 @@ class GradProject extends StatelessWidget {
           HomeView.homeId: (context) => const HomeView(),
           'login': (context) => const Login(),
           'register': (context) => const Register(),
-          DescriptionView.id:(context) =>const DescriptionView()
+          DescriptionView.id:(context) => const DescriptionView(),
+          "homeViewBody": (context) => const HomeViewBody()
         },
         localizationsDelegates: const [
           GlobalMaterialLocalizations.delegate,
