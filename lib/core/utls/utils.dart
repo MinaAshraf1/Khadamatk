@@ -9,10 +9,16 @@ String convertDateToHours(String dateString) {
     if(minutes == 0) {
       return "00 : 12 ص";
     }
-    return "${minutes} : 12 ص";
+    return "$minutes : 12 ص";
   } else if (hour > 12) {
+    if(minutes == 0) {
+      return "00 : ${hour - 12} م";
+    }
     return "$minutes : ${hour - 12} م";
   } else {
+    if(minutes == 0) {
+      return "00 : $hour ص";
+    }
     return "$minutes : $hour ص";
   }
 }

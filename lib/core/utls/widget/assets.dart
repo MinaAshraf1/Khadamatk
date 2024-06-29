@@ -5,6 +5,7 @@ class Assets {
   static const picIcon = "assets/images/pic_icon.png";
   static const descIcon = "assets/images/desc_icon.png";
   static const locationIcon = "assets/images/location_icon.png";
+  static const locationIcon2 = "assets/images/location_icon2.png";
   static const phoneIcon = "assets/images/phone_icon.png";
   static const clockIcon = "assets/images/clock_icon.png";
   static const location = "assets/images/location_pin.png";

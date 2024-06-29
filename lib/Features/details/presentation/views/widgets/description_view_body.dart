@@ -88,9 +88,18 @@ class DescriptionViewBody extends StatelessWidget {
                   ],
                 ),
 
-                CustomButton(phone: phone),
-                
-                CustomMapButton(latitude: latitude, longitude: longitude)
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      CustomButton(phone: phone),
+
+                      CustomMapButton(latitude: latitude, longitude: longitude)
+                    ],
+                  ),
+                )
+
               ],
             ),
           ),

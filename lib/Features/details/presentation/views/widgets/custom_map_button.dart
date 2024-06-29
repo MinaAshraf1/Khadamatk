@@ -31,26 +31,29 @@ class CustomMapButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(10),
           borderSide: BorderSide.none
         ),
-        color: purple,
+        color: Colors.black,
         child: Directionality(
           textDirection: TextDirection.rtl,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(left: 10.0),
-                  child: Image.asset(Assets.locationIcon, height: 24,),
-                ),
-
-                const Text(
-                  "اذهب الي المكان",
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.w500,
+          child: Padding(
+            padding: const EdgeInsets.only(left: 20.0, right: 10),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left: 10.0),
+                    child: Image.asset(Assets.locationIcon2, height: 24,),
                   ),
-                ),
-              ]
+
+                  const Text(
+                    "الموقع",
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                ]
+            ),
           ),
         ),
       ),
