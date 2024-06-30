@@ -39,7 +39,7 @@ class ServerFailure extends Failure {
     } else if (statusCode == 404) {
       return ServerFailure('Your request not found, Please try later');
     } else if (statusCode == 500) {
-      return ServerFailure('Internal Server error, Please try later');
+      return ServerFailure('لا يوجد اماكن');
     } else {
       return ServerFailure('Opps There was an Error, Please try again');
     }

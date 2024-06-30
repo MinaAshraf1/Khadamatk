@@ -19,13 +19,17 @@ class CustomAppBar extends StatelessWidget {
             'assets/images/logo1.png',
             width: 30,
           ),
-          FittedBox(
-            fit: BoxFit.fill,
-            child: Text(
-              titleText,
-              style: const TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.w700,
+          SizedBox(
+            width: MediaQuery.of(context).size.width * .5,
+            height: 30,
+            child: FittedBox(
+              fit: BoxFit.fitHeight,
+              child: Text(
+                titleText,
+                style: const TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.w700,
+                ),
               ),
             ),
           ),

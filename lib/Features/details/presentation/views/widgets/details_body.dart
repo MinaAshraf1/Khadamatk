@@ -151,7 +151,9 @@ detailsCubit.details(
                     if (state is DetailsSuccess) {
                       return CustomGridView(details: state.data,url: imageUrl!,);
                     } else if (state is DetailsFailure) {
-                      return Text('Failed to load data: ${state.errMessage}');
+                      return Center(
+                        child: Text(state.errMessage),
+                      );
                     } else {
                       return const Center(
                         child: CircularProgressIndicator(),
