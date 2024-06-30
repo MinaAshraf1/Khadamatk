@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -8,7 +10,6 @@ import 'package:gradproject/core/utls/widget/sign_logo.dart';
 import 'package:gradproject/core/utls/widget/text_body.dart';
 import 'package:gradproject/main.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class Register extends StatefulWidget {
   const Register({super.key});
@@ -30,6 +31,10 @@ class _RegisterState extends State<Register> {
   final TextEditingController street = TextEditingController();
   final TextEditingController city = TextEditingController();
   GlobalKey<FormState> formKey = GlobalKey();
+  String changePass = "";
+  String changePass2 = "";
+  Color colorChangePass = Colors.green;
+  Color colorChangePass2 = Colors.green;
 
   bool isLoading = false;
   @override
@@ -67,7 +72,7 @@ class _RegisterState extends State<Register> {
             dialogType: DialogType.error,
             animType: AnimType.bottomSlide,
             title: 'خطأ',
-            desc: state.errMessage,
+            desc: state.errMessage ?? "يمكن ان يكون البريد الالكترني خطأ او مسجل من قبل",
             btnOkOnPress: () {},
             btnOkColor: Colors.red,
           ).show();
@@ -116,9 +121,68 @@ class _RegisterState extends State<Register> {
                             ),
                             TextBody(
                               textController: password,
+                              validator: (val) {
+                                bool hasUpperCase = val!.contains(RegExp(r'[A-Z]'));
+                                bool hasLowerCase = val.contains(RegExp(r'[a-z]'));
+                                bool hasNumber = val.contains(RegExp(r'[0-9]'));
+                                bool hasSpecialChar = val.contains(RegExp(r'[#$@%*]'));
+                                if (val.isEmpty) {
+                                  return "لا يمكن ان تكون كلمة المرور فارغة";
+                                } else if(!hasUpperCase) {
+                                  return "يجب ان تحتوي كلمة المرور علي حرف كبير";
+                                } else if (!hasLowerCase) {
+                                  return "يجب ان تحتوي كلمة المرور علي حرف صغير";
+                                } else if (!hasNumber) {
+                                  return "يجب ان تحتوي كلمة المرور علي رقم";
+                                } else if (!hasSpecialChar){
+                                  return "يجب ان تحتوي كلمة المرور علي حرف من (@ # \$ % *)";
+                                }
+                                return null;
+                              },
+                              onChanged: (val) {
+                                bool hasUpperCase = val!.contains(RegExp(r'[A-Z]'));
+                                bool hasLowerCase = val.contains(RegExp(r'[a-z]'));
+                                bool hasNumber = val.contains(RegExp(r'[0-9]'));
+                                bool hasSpecialChar = val.contains(RegExp(r'[#$@%*]'));
+                                if(!hasUpperCase) {
+                                  changePass = "يجب ان تحتوي كلمة المرور علي حرف كبير";
+                                  colorChangePass = Colors.red;
+                                  setState(() {
+
+                                  });
+                                } else if (!hasLowerCase) {
+                                  changePass =  "يجب ان تحتوي كلمة المرور علي حرف صغير";
+                                  colorChangePass = Colors.red;
+                                  setState(() {
+
+                                  });
+                                } else if (!hasNumber) {
+                                  changePass = "يجب ان تحتوي كلمة المرور علي رقم";
+                                  colorChangePass = Colors.red;
+                                  setState(() {
+
+                                  });
+                                } else if (!hasSpecialChar){
+                                  changePass = "يجب ان تحتوي كلمة المرور علي حرف من (@ # \$ % *)";
+                                  colorChangePass = Colors.red;
+                                  setState(() {
+
+                                  });
+                                } else {
+                                  changePass = "كلمة مرور قوية";
+                                  colorChangePass = Colors.green;
+                                  setState(() {
+
+                                  });
+                                }
+                                return null;
+                              },
+                              change: changePass,
+                              changeColor: colorChangePass,
                               imageLink: "assets/images/protection.png",
                               pass: true,
                               name: "كلمة المرور",
+                              notes: "يجب ان تحتوي كلمة المرور علي حرف كبير وحرف صغير وحرف من (@ # * \$ %) ورقم",
                               secure: true,
                               hide: hide,
                               onHide: () {
@@ -129,6 +193,32 @@ class _RegisterState extends State<Register> {
                             ),
                             TextBody(
                               textController: password1,
+                              validator: (val) {
+                                if (val!.isEmpty) {
+                                  return "لا يمكن ان يكون كلمة المرور فارغة";
+                                } else if (val != password.text) {
+                                  return "كلمة المرور غير متطابقة";
+                                }
+                                return null;
+                              },
+                              onChanged: (val) {
+                                if(val != password.text) {
+                                  changePass2 = "كلمة المرور غير متطابقة";
+                                  colorChangePass2 = Colors.red;
+                                  setState(() {
+
+                                  });
+                                } else {
+                                  changePass2 = "كلمة المرور متطابقة";
+                                  colorChangePass2 = Colors.green;
+                                  setState(() {
+
+                                  });
+                                }
+                                return null;
+                              },
+                              change: changePass2,
+                              changeColor: colorChangePass2,
                               imageLink: "assets/images/protection.png",
                               name: "تاكيد كلمة المرور",
                               pass: true,

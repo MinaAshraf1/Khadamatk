@@ -11,6 +11,11 @@ class TextBody extends StatelessWidget {
   final void Function()? onHide;
   final TextInputType? keyboardType;
   final TextEditingController textController;
+  final String? notes;
+  final String? change;
+  final Color? changeColor;
+  final String? Function(String?)? validator;
+  final String? Function(String?)? onChanged;
 
   const TextBody({
     super.key,
@@ -23,11 +28,17 @@ class TextBody extends StatelessWidget {
     this.keyboardType,
     this.pass,
     this.hint,
+    this.notes,
+    this.validator,
+    this.onChanged,
+    this.change,
+    this.changeColor,
   });
 
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Row(
           textDirection: TextDirection.rtl,
@@ -39,10 +50,27 @@ class TextBody extends StatelessWidget {
               width: 40,
             ),
             const SizedBox(width: 10),
-            Text(
-              name,
-              style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
-            )
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  name,
+                  style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+                ),
+
+                SizedBox(
+                  width: 250,
+                  height: notes != null? 15 : 0,
+                  child: FittedBox(
+                    child: Text(
+                      notes ?? "",
+                      style: const TextStyle(fontSize: 14),
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ],
         ),
         const SizedBox(
@@ -52,13 +80,14 @@ class TextBody extends StatelessWidget {
           textDirection: TextDirection.rtl,
           child: TextFormField(
               controller: textController,
-              validator: (value) {
+              validator: validator ?? (value) {
                 if (value!.isEmpty) {
                   return "لا يمكن ان يكون $name فارغ";
                 }
 
                 return null;
               },
+              onChanged: onChanged,
               textDirection: TextDirection.rtl,
               obscureText: secure ? hide : false,
               keyboardType: keyboardType,
@@ -85,6 +114,17 @@ class TextBody extends StatelessWidget {
                         style: BorderStyle.solid)),
               )),
         ),
+
+        Padding(
+          padding: const EdgeInsets.only(right: 10.0),
+          child: Text(
+            change ?? "",
+            style: TextStyle(
+              color: changeColor,
+            ),
+          ),
+        ),
+
         const SizedBox(
           height: 15,
         )
