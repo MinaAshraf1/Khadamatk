@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:gradproject/Features/home/data/models/category_model.dart';
 import 'package:gradproject/Features/home/presentation/view_model/cubit/user_cubit.dart';
 import 'package:gradproject/Features/home/presentation/views/search_category.dart';
@@ -69,7 +70,7 @@ class _MainPageBodyState extends State<MainPageBody> {
             AppBarView(
               onPressed: _openDrawer,
               text: 'استطلع',
-              icon: Icons.menu,
+              icon: const FaIcon(FontAwesomeIcons.bars),
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),

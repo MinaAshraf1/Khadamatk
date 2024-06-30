@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gradproject/Features/details/presentation/views/widgets/title_text.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class CustomAppBar extends StatelessWidget {
   final String titleText;
@@ -11,17 +11,13 @@ class CustomAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 10.0),
+      padding: const EdgeInsets.only(top: 15.0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          IconButton(
-            onPressed: () {
-              Navigator.of(context).pop();
-            },
-            iconSize: 40,
-            color: Colors.black,
-            icon: const Icon(Icons.arrow_forward),
+          Image.asset(
+            'assets/images/logo1.png',
+            width: 30,
           ),
           FittedBox(
             fit: BoxFit.fill,
@@ -33,9 +29,13 @@ class CustomAppBar extends StatelessWidget {
               ),
             ),
           ),
-          Image.asset(
-            'assets/images/logo1.png',
-            width: 30,
+          IconButton(
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+            iconSize: 30,
+            color: Colors.black,
+            icon: const FaIcon(FontAwesomeIcons.arrowLeftLong),
           ),
         ],
       ),

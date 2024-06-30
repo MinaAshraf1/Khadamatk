@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:gradproject/Features/details/presentation/view_model/cubit/details_cubit.dart';
 import 'package:gradproject/Features/details/presentation/views/widgets/custom_grid_view.dart';
 import 'package:gradproject/Features/home/presentation/views/widgets/app_bar_view.dart';
 import 'package:gradproject/Features/search_services/presentation/views/search_service.dart';
 import 'package:gradproject/core/utls/widget/custom_text_feild.dart';
 import 'package:gradproject/main.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class DetailsBody extends StatefulWidget {
   const DetailsBody({super.key});
@@ -127,7 +127,7 @@ detailsCubit.details(
               padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
               child: AppBarView(
                 text:categoryName?? 'الخدمات',
-                icon: Icons.arrow_forward,
+                icon: const FaIcon(FontAwesomeIcons.arrowLeftLong),
                 onPressed: () {
                   Navigator.pop(context);
                 },

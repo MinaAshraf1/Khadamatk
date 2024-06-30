@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:gradproject/Features/details/data/models/details/details.dart';
 import 'package:gradproject/Features/details/presentation/view_model/cubit/details_cubit.dart';
 import 'package:gradproject/Features/details/presentation/views/widgets/custom_grid_view.dart';
@@ -89,7 +90,7 @@ class _SearchServiceBodyState extends State<SearchServiceBody> {
             padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
             child: AppBarView(
               text: 'البحث',
-              icon: Icons.arrow_forward,
+              icon: const FaIcon(FontAwesomeIcons.arrowLeftLong),
               onPressed: () {
                 Navigator.pop(context);
                 FocusScope.of(context).unfocus();

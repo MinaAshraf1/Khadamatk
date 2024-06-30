@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:gradproject/Features/home/data/models/category_model.dart';
 import 'package:gradproject/Features/home/presentation/views/widgets/app_bar_view.dart';
 import 'package:gradproject/Features/home/presentation/views/widgets/custom_list_view.dart';
@@ -24,7 +25,7 @@ class _SearchCategoryBodyState extends State<SearchCategoryBody> {
             padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
             child: AppBarView(
               text: 'الخدمه',
-              icon: Icons.arrow_forward,
+              icon: const FaIcon(FontAwesomeIcons.arrowLeftLong),
               onPressed: () {
                 Navigator.pop(context);
                 FocusScope.of(context).unfocus();
