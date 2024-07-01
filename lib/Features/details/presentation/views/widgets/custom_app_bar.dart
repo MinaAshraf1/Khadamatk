@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:gradproject/Features/home/presentation/views/main_page.dart';
 
 class CustomAppBar extends StatelessWidget {
   final String titleText;
@@ -15,9 +16,14 @@ class CustomAppBar extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Image.asset(
-            'assets/images/logo1.png',
-            width: 30,
+          MaterialButton(
+            onPressed: () {
+              Navigator.of(context).pushReplacementNamed(MainPage.homePageId);
+            },
+            child: Image.asset(
+              'assets/images/logo1.png',
+              width: 30,
+            ),
           ),
           SizedBox(
             width: MediaQuery.of(context).size.width * .5,

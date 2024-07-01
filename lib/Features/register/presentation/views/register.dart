@@ -62,7 +62,7 @@ class _RegisterState extends State<Register> {
           ).show();
 
           // SharedPreferences prefs = await SharedPreferences.getInstance();
-          prefs.setBool('isLoggedIn', true);
+          // prefs.setBool('isLoggedIn', true);
         } else if (state is RegisterFailure) {
           setState(() {
             isLoading = false;
