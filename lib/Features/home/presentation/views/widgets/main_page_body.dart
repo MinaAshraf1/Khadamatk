@@ -7,12 +7,8 @@ import 'package:gradproject/Features/home/presentation/views/search_category.dar
 import 'package:gradproject/Features/home/presentation/views/widgets/app_bar_view.dart';
 import 'package:gradproject/Features/home/presentation/views/widgets/custom_list_view.dart';
 import 'package:gradproject/Features/home/presentation/views/widgets/drawer_view.dart';
-import 'package:gradproject/Features/login/presentation/view_model/cubit/login_cubit_cubit.dart';
-import 'package:gradproject/Features/login/presentation/views/login.dart';
-import 'package:gradproject/core/errors/failure.dart';
 import 'package:gradproject/core/utls/widget/custom_text_feild.dart';
 import 'package:gradproject/main.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class MainPageBody extends StatefulWidget {
   const MainPageBody({Key? key}) : super(key: key);

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:gradproject/Features/details/data/models/details/details.dart';
 import 'package:gradproject/Features/details/presentation/view_model/cubit/details_cubit.dart';
 import 'package:gradproject/Features/details/presentation/views/widgets/custom_grid_view.dart';
 import 'package:gradproject/Features/home/presentation/views/widgets/app_bar_view.dart';

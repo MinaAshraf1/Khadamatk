@@ -20,7 +20,7 @@ class AppBarRow extends StatelessWidget {
         const Spacer(),
         CustomButton(
           onPressed: () {
-            Navigator.pushNamed(context, Sign.id);
+            Navigator.pushReplacementNamed(context, Sign.id);
           },
           hint: 'تسجيل',
           color: Colors.white,

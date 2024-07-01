@@ -12,7 +12,7 @@ class LoginCubitCubit extends Cubit<LoginCubitState> {
 
   String? token;
 
-  Future<void> login(LoginModel loginModel) async {
+  Future<void>  login(LoginModel loginModel) async {
     emit(LoginCubitLoading());
     try {
       final result = await loginRepoImpl.login(loginModel);

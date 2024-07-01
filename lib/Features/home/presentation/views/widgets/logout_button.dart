@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:gradproject/Features/home/presentation/views/main_page.dart';
 import 'package:gradproject/const.dart';
+import 'package:gradproject/main.dart';
 import 'package:gradproject/views/home_view.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class LogoutButton extends StatelessWidget {
   const LogoutButton({super.key});
@@ -10,8 +9,7 @@ class LogoutButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialButton(
-      onPressed: () async {
-        SharedPreferences prefs = await SharedPreferences.getInstance();
+      onPressed: () {
         prefs.remove('isLoggedIn');
         prefs.remove('token');
         Navigator.of(context).pushReplacementNamed(HomeView.homeId);

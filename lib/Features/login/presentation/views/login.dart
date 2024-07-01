@@ -10,7 +10,6 @@ import 'package:gradproject/core/utls/widget/sign_logo.dart';
 import 'package:gradproject/core/utls/widget/text_body.dart';
 import 'package:gradproject/main.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:awesome_dialog/awesome_dialog.dart';
 
 class Login extends StatefulWidget {
@@ -22,10 +21,24 @@ class Login extends StatefulWidget {
 
 class _LoginState extends State<Login> {
   bool hide = true;
-  final TextEditingController _usernameController = TextEditingController();
-  final TextEditingController _passwordController = TextEditingController();
+  late TextEditingController _usernameController;
+  late TextEditingController _passwordController;
   final GlobalKey<FormState> formKey = GlobalKey();
   bool isLoading = false;
+
+  @override
+  void initState() {
+    _usernameController = TextEditingController();
+    _passwordController = TextEditingController();
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    _usernameController.dispose();
+    _passwordController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -47,19 +60,13 @@ class _LoginState extends State<Login> {
             // SharedPreferences prefs = await SharedPreferences.getInstance();
             await prefs.setString('token', token);
 
-            AwesomeDialog(
-              context: context,
-              dialogType: DialogType.success,
-              animType: AnimType.bottomSlide,
-              title: 'تم بنجاح',
-              desc: 'تم تسجيل الدخول بنجاح',
-              btnOkOnPress: null,
-            ).show();
+            // _dialog(context);
 
-            Future.delayed(const Duration(seconds: 1), () {
-              Navigator.of(context).pushReplacementNamed(MainPage.homePageId,);
-            });
             await prefs.setBool('isLoggedIn', true);
+
+            // Future.delayed(const Duration(seconds: 1), () {
+              Navigator.of(context).pushReplacementNamed(MainPage.homePageId,);
+            // });
           }
         } else if (state is LoginCubitFailure) {
           setState(() {
@@ -162,5 +169,16 @@ class _LoginState extends State<Login> {
         );
       },
     );
+  }
+
+  _dialog(BuildContext context) {
+    return AwesomeDialog(
+      context: context,
+      dialogType: DialogType.success,
+      animType: AnimType.bottomSlide,
+      title: 'تم بنجاح',
+      desc: 'تم تسجيل الدخول بنجاح',
+      btnOkOnPress: null,
+    ).show();
   }
 }

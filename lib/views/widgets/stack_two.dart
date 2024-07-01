@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:gradproject/Features/home/presentation/views/main_page.dart';
 import 'package:gradproject/const.dart';
 
 class StackTwo extends StatelessWidget {
