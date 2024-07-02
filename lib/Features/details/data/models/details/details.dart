@@ -10,6 +10,9 @@ class Details {
   String? phoneNumber;
   String? startWork;
   String? endWork;
+  String ?specialization;
+  int? priceOfHour;
+  bool?hasDelivery;
   double? latitude;
   double? longitude;
   List<Image>? images;
@@ -20,13 +23,16 @@ class Details {
     this.street,
     this.city,
     this.descriptionOfPlace,
+    this.hasDelivery,
     this.linkOfPlace,
     this.phoneNumber,
     this.startWork,
     this.endWork,
+    this.priceOfHour,
     this.latitude,
     this.longitude,
     this.images,
+    this.specialization
   });
 
   factory Details.fromJson(Map<String, dynamic> json) => Details(
@@ -34,7 +40,10 @@ class Details {
         name: json['name'] as String?,
         street: json['street'] as String?,
         city: json['city'] as String?,
+        hasDelivery:json['hasDelivery'],
+        priceOfHour:json['priceOfHour'],
         descriptionOfPlace: json['descriptionOfPlace'] as String?,
+        specialization: json['specialization'],
         linkOfPlace: json['linkOfPlace'] as String?,
         phoneNumber: json['phoneNumber'] as String?,
         startWork: json['startWork'] as String?,
@@ -51,6 +60,7 @@ class Details {
         'name': name,
         'street': street,
         'city': city,
+        "hasDelivery":hasDelivery,
         'descriptionOfPlace': descriptionOfPlace,
         'linkOfPlace': linkOfPlace,
         'phoneNumber': phoneNumber,
@@ -58,6 +68,8 @@ class Details {
         'endWork': endWork,
         'latitude': latitude,
         'longitude': longitude,
+        'specialization':specialization,
+        'priceOfHour':priceOfHour,
         'images': images?.map((e) => e.toJson()).toList(),
       };
 }

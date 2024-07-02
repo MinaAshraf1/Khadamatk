@@ -49,7 +49,7 @@ class _DetailsBodyState extends State<DetailsBody> {
       setState(() {
         detailsCubit.details(
             url:
-                'http://graduationbroject.runasp.net/api/AnalysisCenters/GetAllAnalysisCenters2',
+                'http://graduationbroject.runasp.net/api/AnalysisCenters/GetAllAnalysisCenters',
             token: token);
        
       });
@@ -59,7 +59,7 @@ class _DetailsBodyState extends State<DetailsBody> {
          setState(() {
        detailsCubit.details(
             url:
-                'http://graduationbroject.runasp.net/api/pharmacie/GetAllPharmacies2',
+                'http://graduationbroject.runasp.net/api/pharmacie/GetAllPharmacies',
             token: token);
     
       });
@@ -69,7 +69,7 @@ class _DetailsBodyState extends State<DetailsBody> {
            setState(() {
       detailsCubit.details(
             url:
-                'http://graduationbroject.runasp.net/api/Doctor/GetAllDoctors2',
+                'http://graduationbroject.runasp.net/api/Doctor/GetAllDoctors',
             token: token);
       });
        
@@ -78,7 +78,7 @@ class _DetailsBodyState extends State<DetailsBody> {
              setState(() {
    detailsCubit.details(
             url:
-                'http://graduationbroject.runasp.net/api/PlayStation/GetAllPlayStations2',
+                'http://graduationbroject.runasp.net/api/PlayStation/GetAllPlayStations',
             token: token);
       });
        
@@ -87,7 +87,7 @@ class _DetailsBodyState extends State<DetailsBody> {
                   setState(() {
  detailsCubit.details(
             url:
-                'http://graduationbroject.runasp.net/api/Restaurant/GetAllRestaurants2',
+                'http://graduationbroject.runasp.net/api/Restaurant/GetAllRestaurants',
             token: token);
       });
        
@@ -96,7 +96,7 @@ class _DetailsBodyState extends State<DetailsBody> {
                         setState(() {
 detailsCubit.details(
             url:
-                'http://graduationbroject.runasp.net/api/SuperMarket/GetAllSuperMarkets2',
+                'http://graduationbroject.runasp.net/api/SuperMarket/GetAllSuperMarkets',
             token: token);
       });
         
@@ -105,7 +105,7 @@ detailsCubit.details(
          setState(() {
      detailsCubit.details(
             url:
-                'http://graduationbroject.runasp.net/api/Workspace/GetAllWorkspaces2',
+                'http://graduationbroject.runasp.net/api/Workspace/GetAllWorkspaces',
             token: token);
       });
         

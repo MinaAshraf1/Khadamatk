@@ -6,6 +6,7 @@ class ServiceItem extends StatelessWidget {
   const ServiceItem({super.key, required this.details, required this.url});
 final Details details;
 final String url;
+
   @override
   Widget build(BuildContext context) {
        String imageUrl;

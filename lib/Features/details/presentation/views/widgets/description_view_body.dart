@@ -10,6 +10,9 @@ import 'package:cached_network_image/cached_network_image.dart';
 class DescriptionViewBody extends StatelessWidget {
   final String mainImage;
   final List<String> images;
+  final String specialization;
+  final dynamic price;
+  final dynamic hasDelivery;
   final String descText;
   final String city;
   final String street;
@@ -33,6 +36,9 @@ class DescriptionViewBody extends StatelessWidget {
     required this.mainImage,
     required this.longitude,
     required this.latitude,
+    required this.specialization,
+    required this.price,
+    required this.hasDelivery,
   });
 
   @override
@@ -70,13 +76,25 @@ class DescriptionViewBody extends StatelessWidget {
                 // استخدم ListView لعرض الصور الأخرى
                 ListImage(images: images),
 
+                specialization == "empty"? const SizedBox(height: 0,) : const CustomTextIcon(text: "التخصص", icon: Assets.descIcon),
+
+                specialization == "empty"? const SizedBox(height: 0,) : CustomText(text: specialization),
+
+
                 const CustomTextIcon(text: "الوصف", icon: Assets.descIcon),
 
                 CustomText(text: descText),
 
+                price == 0? const SizedBox(height: 0,) : const CustomTextIcon(text: "سعر الساعة", icon: Assets.descIcon),
+                price == 0? const SizedBox(height: 0,) : CustomText(text: "$price"),
+
                 const CustomTextIcon(text: "الموقع", icon: Assets.locationIcon),
 
                 CustomText(text: "$city - $street"),
+
+                hasDelivery == null? const SizedBox(height: 0,) : const CustomTextIcon(text: "خدمة توصيل", icon: Assets.locationIcon),
+
+                hasDelivery == null? const SizedBox(height: 0,) : CustomText(text: hasDelivery == false? "لا يوجد خدمة توصيل" : "يوجد خدمة توصيل"),
 
                 const CustomTextIcon(text: "مواعيد", icon: Assets.clockIcon),
 

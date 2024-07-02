@@ -16,8 +16,8 @@ class CustomAppBar extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          MaterialButton(
-            onPressed: () {
+          GestureDetector(
+            onTap: () {
               Navigator.of(context).pushReplacementNamed(MainPage.homePageId);
             },
             child: Image.asset(
@@ -26,15 +26,15 @@ class CustomAppBar extends StatelessWidget {
             ),
           ),
           SizedBox(
-            width: MediaQuery.of(context).size.width * .5,
+            width: MediaQuery.of(context).size.width * .7,
             height: 30,
             child: FittedBox(
-              fit: BoxFit.fitHeight,
               child: Text(
                 titleText,
                 style: const TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.w700,
+                  fontSize: 20,
+                  fontWeight: FontWeight.w700,
+
                 ),
               ),
             ),
