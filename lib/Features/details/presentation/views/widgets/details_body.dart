@@ -17,9 +17,10 @@ class DetailsBody extends StatefulWidget {
 }
 
 class _DetailsBodyState extends State<DetailsBody> {
-    String? categoryName;
-    String?imageUrl;
-    int?id;
+  String? categoryName;
+  String?imageUrl;
+  int?id;
+
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();

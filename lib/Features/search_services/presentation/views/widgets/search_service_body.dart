@@ -43,37 +43,37 @@ class _SearchServiceBodyState extends State<SearchServiceBody> {
     switch (id) {
       case 1:
         detailsCubit.details(
-            url: 'http://graduationbroject.runasp.net/api/AnalysisCenters/GetAllAnalysisCenters2',
+            url: 'http://graduationbroject.runasp.net/api/AnalysisCenters/GetAllAnalysisCenters',
             token: token);
         break;
       case 2:
         detailsCubit.details(
-            url: 'http://graduationbroject.runasp.net/api/pharmacie/GetAllPharmacies2',
+            url: 'http://graduationbroject.runasp.net/api/pharmacie/GetAllPharmacies',
             token: token);
         break;
       case 3:
         detailsCubit.details(
-            url: 'http://graduationbroject.runasp.net/api/Doctor/GetAllDoctors2',
+            url: 'http://graduationbroject.runasp.net/api/Doctor/GetAllDoctors',
             token: token);
         break;
       case 4:
         detailsCubit.details(
-            url: 'http://graduationbroject.runasp.net/api/PlayStation/GetAllPlayStations2',
+            url: 'http://graduationbroject.runasp.net/api/PlayStation/GetAllPlayStations',
             token: token);
         break;
       case 5:
         detailsCubit.details(
-            url: 'http://graduationbroject.runasp.net/api/Restaurant/GetAllRestaurants2',
+            url: 'http://graduationbroject.runasp.net/api/Restaurant/GetAllRestaurants',
             token: token);
         break;
       case 6:
         detailsCubit.details(
-            url: 'http://graduationbroject.runasp.net/api/SuperMarket/GetAllSuperMarkets2',
+            url: 'http://graduationbroject.runasp.net/api/SuperMarket/GetAllSuperMarkets',
             token: token);
         break;
       default:
         detailsCubit.details(
-            url: 'http://graduationbroject.runasp.net/api/Workspace/GetAllWorkspaces2',
+            url: 'http://graduationbroject.runasp.net/api/Workspace/GetAllWorkspaces',
             token: token);
         break;
     }
