@@ -106,7 +106,6 @@ class _LoginState extends State<Login> {
                           secure: false,
                           hide: false,
                         ),
-                        const SizedBox(height: 15),
                         TextBody(
                           textController: _passwordController,
                           imageLink: "assets/images/protection.png",

@@ -62,7 +62,7 @@ class GradProject extends StatelessWidget {
         title: 'Grad Project',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
-            fontFamily: 'ElMessiri'
+          fontFamily: 'ElMessiri'
         ),
         home: const SplashView(),
         routes: {

@@ -19,11 +19,11 @@ class ServiceImage extends StatelessWidget {
         children: [
           ClipRRect(
               borderRadius: BorderRadius.circular(16),
-              child: Image.network(
+              child: Image.asset(
                 category.imageUrl,
                 height: double.infinity,
                 width: MediaQuery.of(context).size.width * .7,
-                fit: BoxFit.fill,
+                fit: BoxFit.cover,
               )),
           Container(
                height:double.infinity,
