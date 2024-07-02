@@ -62,6 +62,13 @@ class _LoginState extends State<Login> {
 
             // _dialog(context);
 
+            ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(
+                content: Text("تم تسجيل لدخول بنجاح"),
+                duration: Duration(seconds: 2),
+              )
+            );
+
             await prefs.setBool('isLoggedIn', true);
 
             // Future.delayed(const Duration(seconds: 1), () {
@@ -170,14 +177,14 @@ class _LoginState extends State<Login> {
     );
   }
 
-  _dialog(BuildContext context) {
-    return AwesomeDialog(
-      context: context,
-      dialogType: DialogType.success,
-      animType: AnimType.bottomSlide,
-      title: 'تم بنجاح',
-      desc: 'تم تسجيل الدخول بنجاح',
-      btnOkOnPress: null,
-    ).show();
-  }
+  // _dialog(BuildContext context) {
+  //   return AwesomeDialog(
+  //     context: context,
+  //     dialogType: DialogType.success,
+  //     animType: AnimType.bottomSlide,
+  //     title: 'تم بنجاح',
+  //     desc: 'تم تسجيل الدخول بنجاح',
+  //     btnOkOnPress: null,
+  //   ).show();
+  // }
 }
