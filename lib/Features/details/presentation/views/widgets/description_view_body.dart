@@ -20,8 +20,8 @@ class DescriptionViewBody extends StatelessWidget {
   final String startWork;
   final String endWork;
   final String phone;
-  final longitude;
-  final latitude;
+  final dynamic longitude;
+  final dynamic latitude;
 
   const DescriptionViewBody({
     super.key,
@@ -71,32 +71,32 @@ class DescriptionViewBody extends StatelessWidget {
               
                 const SizedBox(height: 20,),
 
-                const CustomTextIcon(text: "صور", icon: Assets.picIcon),
+                const CustomTextIcon(text: "صور", imgIcon: Assets.picIcon),
 
                 // استخدم ListView لعرض الصور الأخرى
                 ListImage(images: images),
 
-                specialization == "empty"? const SizedBox(height: 0,) : const CustomTextIcon(text: "التخصص", icon: Assets.descIcon),
+                specialization == "empty"? const SizedBox(height: 0,) : const CustomTextIcon(text: "التخصص", icon: Icons.medical_information,),
 
                 specialization == "empty"? const SizedBox(height: 0,) : CustomText(text: specialization),
 
 
-                const CustomTextIcon(text: "الوصف", icon: Assets.descIcon),
+                const CustomTextIcon(text: "الوصف", imgIcon: Assets.descIcon),
 
                 CustomText(text: descText),
 
-                price == 0? const SizedBox(height: 0,) : const CustomTextIcon(text: "سعر الساعة", icon: Assets.descIcon),
-                price == 0? const SizedBox(height: 0,) : CustomText(text: "$price"),
+                price == 0? const SizedBox(height: 0,) : const CustomTextIcon(text: "سعر الساعة", icon: Icons.monetization_on_outlined,),
+                price == 0? const SizedBox(height: 0,) : CustomText(text: "$price جنيه"),
 
-                const CustomTextIcon(text: "الموقع", icon: Assets.locationIcon),
+                const CustomTextIcon(text: "الموقع", imgIcon: Assets.locationIcon),
 
                 CustomText(text: "$city - $street"),
 
-                hasDelivery == null? const SizedBox(height: 0,) : const CustomTextIcon(text: "خدمة توصيل", icon: Assets.locationIcon),
+                hasDelivery == null? const SizedBox(height: 0,) : const CustomTextIcon(text: "خدمة توصيل", icon: Icons.directions_bike_outlined,),
 
                 hasDelivery == null? const SizedBox(height: 0,) : CustomText(text: hasDelivery == false? "لا يوجد خدمة توصيل" : "يوجد خدمة توصيل"),
 
-                const CustomTextIcon(text: "مواعيد", icon: Assets.clockIcon),
+                const CustomTextIcon(text: "مواعيد", imgIcon: Assets.clockIcon),
 
                Column(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,

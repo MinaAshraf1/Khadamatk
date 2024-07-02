@@ -9,12 +9,15 @@ class CustomText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Directionality(
         textDirection: TextDirection.rtl,
-        child: Text(
-          text,
-          style: const TextStyle(
-              fontWeight: FontWeight.w400,
-              fontSize: 15,
-              color: Color(0xff8E8E93)
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 5.0),
+          child: Text(
+            text,
+            style: const TextStyle(
+                fontWeight: FontWeight.w400,
+                fontSize: 15,
+                color: Color(0xff8E8E93)
+            ),
           ),
         )
     );

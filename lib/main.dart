@@ -59,7 +59,7 @@ class GradProject extends StatelessWidget {
         )
       ],
       child: MaterialApp(
-        title: 'Grad Project',
+        title: 'KHADAMATK',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
           fontFamily: 'ElMessiri'

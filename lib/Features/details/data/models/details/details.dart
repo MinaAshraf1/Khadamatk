@@ -45,7 +45,7 @@ class Details {
         descriptionOfPlace: json['descriptionOfPlace'] as String?,
         specialization: json['specialization'],
         linkOfPlace: json['linkOfPlace'] as String?,
-        phoneNumber: json['phoneNumber'] as String?,
+        phoneNumber: json['phoneNumber'] as String? ?? json['phone'] as String?,
         startWork: json['startWork'] as String?,
         endWork: json['endWork'] as String?,
         latitude: (json['latitude'] as num?)?.toDouble(),
